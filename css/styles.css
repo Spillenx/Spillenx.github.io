@@ -8,6 +8,10 @@ img {
   max-height: 100%;
 }
 
+select {
+  margin: 5px;
+}
+
 #content-container {
   border-radius: 5px;
 }
