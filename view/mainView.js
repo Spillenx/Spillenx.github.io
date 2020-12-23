@@ -9,10 +9,14 @@ class mainView {
 
   showGallery() {
     let html = ''
-    html += "<h1>Bosses fina bilder!"
+    html += '<div id="item">'
     html += "<p>"
     html += "<img src='images/beach.jpg'>"
+    html += '</div>'
+    html += '<br>'
+    html += '<div id="item">'
     html += "<img src='images/shenzhen.jpg'>"
+    html += '</div>'
     Helper.setHtml('main', html)
   }
 }
