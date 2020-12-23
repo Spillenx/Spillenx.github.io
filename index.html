@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="eng">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" href="icons/favicon.png">
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+
+<script src="js/main.js"></script>
+<script src="js/helper.js"></script>
+<script src="controller/mainController.js"></script>
+<script src="view/mainView.js"></script>
+
+<script>
+
+  var selectedPage = 'main'
+
+  const Controller = new mainController()
+  const View = new mainView()
+
+  document.addEventListener('DOMContentLoaded', () => {
+
+    document.getElementById('selectedPage').addEventListener('click', ()=> {
+      let selectedPage = document.getElementById('page').value
+      Controller.selectedPage(selectedPage)
+    })
+
+    Controller.init()
+  })
+
+</script>
+
+<body>
+
+  <div id="header">
+    <h1>MY PWA ASSIGNMENT</h1>
+  </div>
+
+  <div id="nav">
+    <label>Choose page: </label>
+    <select id="page">
+      <option value="main">Start page</option>
+      <option value="gallery">Gallery</option>
+    </select>
+    <button id="selectedPage">OK</button>
+  </div>
+
+  <div id="main" class="content">
+  </div>
+
+  <div id="footer">
+    <p>Made by Peter Sillén, student in JavaScriptutveckling at EC Utbildning</p>
+  </div>
+
+</body>
+</html>
