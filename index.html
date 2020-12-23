@@ -16,13 +16,14 @@
 <script>
 
   var selectedPage = 'main'
+  var selectedPic = ''
 
   const Controller = new mainController()
   const View = new mainView()
 
   document.addEventListener('DOMContentLoaded', () => {
 
-    document.getElementById('selectedPage').addEventListener('click', ()=> {
+    document.getElementById('selectedPage').addEventListener('click', () => {
       let selectedPage = document.getElementById('page').value
       Controller.selectedPage(selectedPage)
     })
@@ -33,7 +34,7 @@
 </script>
 
 <body>
-  
+
   <div id="content-container">
     <div id="header">
       <h1>MY PWA ASSIGNMENT</h1>

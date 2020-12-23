@@ -1,5 +1,5 @@
 body {
-  background-color: #e8e8e8;
+  background-color: #d0f5da;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -25,7 +25,7 @@ img {
 #header {
   display: flex;
   flex-direction: row;
-  background-color: #3266a8;
+  background-color: #32a852;
   justify-content: center;
   color: white;
   font-size: 20px;
@@ -36,7 +36,7 @@ img {
 #nav {
   display: flex;
   align-items: center;
-  background-color: #89acc4;
+  background-color: #4ec26d;
   justify-content: center;
   color: white;
   font-size: 20px;
@@ -46,6 +46,7 @@ img {
 
 #main {
   display: flex;
+  flex-direction: column;
   text-align: center;
   align-items: center;
   justify-content: center;
@@ -54,7 +55,7 @@ img {
 
 #footer {
   display: flex;
-  background-color: #89acc4;
+  background-color: #32a852;
   justify-content: center;
   color: white;
 }
