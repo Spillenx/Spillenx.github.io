@@ -12,10 +12,6 @@ select {
   margin: 5px;
 }
 
-#content-container {
-  border-radius: 5px;
-}
-
 #item {
   border-radius: 5px;
   background-color: black;
@@ -27,17 +23,19 @@ select {
 }
 
 #header {
+  border-radius: 5px;
   display: flex;
-  flex-direction: row;
+  align-items: center;
+  flex-direction: column;
   background-color: #32a852;
   justify-content: center;
   color: white;
   font-size: 20px;
-  padding: 10px;
-  border-bottom: 2px solid black;
+  border: 1px solid black;
 }
 
 #nav {
+  border-radius: 5px;
   display: flex;
   align-items: center;
   background-color: #4ec26d;
@@ -45,21 +43,24 @@ select {
   color: white;
   font-size: 20px;
   padding: 10px;
-  border-bottom: 2px solid black;
+  border: 1px solid black;
 }
 
 #main {
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   text-align: center;
   align-items: center;
   justify-content: center;
-  border-bottom: 2px solid black;
+  background-color: white;
 }
 
 #footer {
+  border-radius: 5px;
   display: flex;
   background-color: #32a852;
   justify-content: center;
   color: white;
+  border: 1px solid black;
 }
