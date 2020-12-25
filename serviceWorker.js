@@ -1,5 +1,5 @@
-const cacheName = 'pwa-assignment-v1'
-const VERSION = '1'
+const cacheName = 'pwa-assignment-v2'
+const VERSION = '2'
 const filesToCache = [
   '/index.html',
   '/manifest.json',
