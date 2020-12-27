@@ -1,5 +1,5 @@
-const cacheName = 'pwa-assignment-v6'
-const VERSION = '6'
+const cacheName = 'pwa-assignment-v5'
+const VERSION = '5'
 const filesToCache = [
   '/index.html',
   '/manifest.json',
@@ -42,39 +42,11 @@ self.addEventListener('activate', (e) => {
 self.addEventListener('fetch', (e) => {
   e.respondWith(
     caches.match(e.request)
-    .then((response) => {
-      if(response) {
-        return response
-      }
-      return fetch(e.request)
-    })
-  )
-})
-
-self.addEventListener('activate', (e) => { 
-  e.waitUntil( 
-    caches.keys()
-        .then((cacheName) => { 
-              cacheName.forEach((value) => { 
-                console.log(value)
-              if (value.indexOf(VERSION) < 0) { 
-                  caches.delete(value)
-              } 
-          })
-          return
-      }) 
-  ) 
-})
-
-self.addEventListener('fetch', (e) => {
-  e.respondWith(
-    caches.match(e.request)
       .then((response) => {
         if (response) {
           return response
         }
         return fetch(e.request)
-      }
-    )
+      })
   )
 })

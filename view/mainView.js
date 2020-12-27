@@ -1,3 +1,5 @@
+// showing the selected informaton on app
+
 class mainView {
   constructor() {}
 
