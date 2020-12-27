@@ -1,9 +1,12 @@
-const cacheName = 'pwa-assignment-v5'
-const VERSION = '5'
+const cacheName = 'pwa-assignment-v1'
+const VERSION = '1'
 const filesToCache = [
   '/index.html',
   '/manifest.json',
   '/icons/favicon.png',
+  '/icons/icon-192x192.png',
+  '/icons/icon-512x512.png',
+  '/icons/icon-maskable.png',
   '/js/helper.js',
   '/js/main.js',
   '/controller/mainController.js',
@@ -13,20 +16,20 @@ const filesToCache = [
   '/images/shenzhen.jpg'
 ]
 
-self.addEventListener('install', (e) => {
-  e.waitUntil(
+self.addEventListener('install', event => {
+  event.waitUntil(
     caches.open(cacheName)
     .then((cache) => {
       return cache.addAll(filesToCache)
     })
-    .then(() => {
-      self.skipWaiting()
-    })
+    // .then(() => {
+    //   self.skipWaiting()
+    // })
   )
 })
 
-self.addEventListener('activate', (e) => {
-  e.waitUntil(
+self.addEventListener('activate', event => {
+  event.waitUntil(
     caches.keys()
     .then((cacheName) => {
       cacheName.forEach((value) => {
@@ -39,14 +42,31 @@ self.addEventListener('activate', (e) => {
   )
 })
 
-self.addEventListener('fetch', (e) => {
-  e.respondWith(
-    caches.match(e.request)
+self.addEventListener('activate', function (event) { 
+  event.waitUntil( 
+    caches.keys()
+        .then(function (cacheNames) { 
+              cacheNames.forEach(function (value) { 
+              if (value.indexOf(VERSION) < 0) { 
+                  caches.delete(value); 
+              } 
+          }); 
+          return; 
+      }) 
+  );  
+}); 
+
+self.addEventListener('fetch', event => {
+  event.respondWith(
+    caches.match(event.request)
       .then((response) => {
         if (response) {
           return response
         }
-        return fetch(e.request)
+        return fetch(event.request)
+      })
+      .catch(error => {
+        console.log(error)
       })
   )
 })
