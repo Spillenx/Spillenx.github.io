@@ -1,5 +1,6 @@
+// Cache name and files to ne cached
+
 const cacheName = 'pwa-assignment-v1'
-const VERSION = '1'
 const filesToCache = [
   '/index.html',
   '/manifest.json',
@@ -16,6 +17,7 @@ const filesToCache = [
   '/images/shenzhen.jpg'
 ]
 
+// Install ervice worker
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(cacheName)
   .then(cache => {
@@ -23,6 +25,8 @@ self.addEventListener('install', event => {
   }))
 })
 
+
+// Activate service worker
 self.addEventListener('fetch', event => {
   event.respondWith(
     caches.match(event.request).then(function(response) {

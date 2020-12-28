@@ -1,3 +1,5 @@
+// Controller for loading content from selected page
+
 class mainController {
   constructor() {}
 
