@@ -1,4 +1,4 @@
-// Cache name and files to ne cached
+// Cache name and files to be cached
 
 const cacheName = 'pwa-assignment-v1'
 const filesToCache = [
@@ -17,7 +17,7 @@ const filesToCache = [
   '/images/shenzhen.jpg'
 ]
 
-// Install ervice worker
+// Install service worker
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(cacheName)
   .then(cache => {

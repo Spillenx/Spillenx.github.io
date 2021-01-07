@@ -1,4 +1,4 @@
-// showing the selected informaton on app
+// Showing the selected informaton on the app
 
 class mainView {
   constructor() {}
@@ -12,7 +12,6 @@ class mainView {
   showGallery() {
     let html = ''
     html += '<div id="item">'
-    html += "<p>"
     html += "<img src='images/beach.jpg'>"
     html += '</div>'
     html += '<br>'
