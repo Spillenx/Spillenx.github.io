@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>...</title>
+    <style>
+        .full-size-element {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #222;
+        }
+
+        .swirling-circle-outer {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            animation: rotateColorsOuter 20s linear infinite, flickerOuter 2s infinite;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.5), 0 0 40px rgba(0, 255, 0, 0.5), 0 0 60px rgba(0, 255, 0, 0.5);
+        }
+
+        .swirling-circle-inner {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: black;
+            animation: rotateColorsInner 10s linear infinite, flickerInner 2s infinite;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.5), 0 0 40px rgba(0, 255, 0, 0.5), 0 0 60px rgba(0, 255, 0, 0.5);
+        }
+
+        @keyframes rotateColorsOuter {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes rotateColorsInner {
+            0% {
+                transform: rotate(0deg);
+                background-color: #00ff00;
+            }
+
+            10% {
+                background-color: #00ff66;
+            }
+
+            20% {
+                background-color: #00ffcc;
+            }
+
+            30% {
+                background-color: #00ccff;
+            }
+
+            40% {
+                background-color: #0099ff;
+            }
+
+            50% {
+                background-color: #0066ff;
+            }
+
+            60% {
+                background-color: #0033ff;
+            }
+
+            70% {
+                background-color: #3300ff;
+            }
+
+            80% {
+                background-color: #6600ff;
+            }
+
+            90% {
+                background-color: #9900ff;
+            }
+
+            100% {
+                transform: rotate(360deg);
+                background-color: #00ff00;
+            }
+        }
+
+        @keyframes flickerOuter {
+
+            0%,
+            100% {
+                box-shadow: 0 0 20px rgba(0, 255, 0, 0.5), 0 0 40px rgba(0, 255, 0, 0.5), 0 0 60px rgba(0, 255, 0, 0.5);
+            }
+
+            25%,
+            75% {
+                box-shadow: 0 0 20px rgba(0, 255, 255, 0.5), 0 0 40px rgba(0, 255, 255, 0.5), 0 0 60px rgba(0, 255, 255, 0.5);
+            }
+        }
+
+        @keyframes flickerInner {
+
+            0%,
+            100% {
+                box-shadow: 0 0 20px rgba(0, 255, 0, 0.5), 0 0 40px rgba(0, 255, 0, 0.5), 0 0 60px rgba(0, 255, 0, 0.5);
+            }
+
+            25%,
+            75% {
+                box-shadow: 0 0 20px rgba(255, 0, 255, 0.5), 0 0 40px rgba(255, 0, 255, 0.5), 0 0 60px rgba(255, 0, 255, 0.5);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="full-size-element">
+    <div class="swirling-circle-outer">
+        <div class="swirling-circle-inner"></div>
+    </div>
+</div>
+
+<script>
+    const timeout = setTimeout(() => {
+        this.isLoading = false;
+    }, 3000);
+
+    setTimeout(() => {
+        clearTimeout(timeout);
+    });
+</script>
+</body>
+</html>
